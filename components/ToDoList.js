@@ -1,6 +1,6 @@
 import react,{Component} from "react";
 import { FlatList, View, Text } from "react-native";
-import { Button } from "react-native-web";
+import { Button } from "react-native";
 import tailwind from "twrnc";
 class ToDoList extends Component{
 
@@ -16,11 +16,11 @@ class ToDoList extends Component{
     handleRow = ({item, index}) =>{// index com a posição 0
 
         return(
-            <View style={tailwind.style(" bg-black flex-row  flex m-5 rounded-xl justify-around content-between")}> 
+            <View style={tailwind.style("w-full bg-black flex-row  flex  rounded-xl justify-around  mb-1 pt-2")}> 
                 <Text style={tailwind.style(" text-black-500 text-white flex")}>        {/* id,          descrição */}
                     {this.formatListNumber(index)} - {item.text}
                 </Text>
-                <Button  title="delete" style={tailwind.style("bg-white rounded-xl")} onPress={() => this.props.onRemove(item)}/>
+                <Button  title="delete"  onPress={() => this.props.onRemove(item)}/>
             </View>
         )
     }
@@ -37,7 +37,7 @@ class ToDoList extends Component{
         const {props} = this
         const keyExtractor = item => item.id;// retorna o item e o id da lista
         return(
-            <View>
+            <View style={tailwind.style(" bg-slate-300 w-full flex-row flex justify-center items-center pt-10 ")}>
                 <FlatList 
                 data={props.list}
                 keyExtractor={keyExtractor}

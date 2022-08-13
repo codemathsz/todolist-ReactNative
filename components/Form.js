@@ -1,5 +1,5 @@
 import react,{Component} from "react";
-import { Button, TextInput, View } from "react-native-web";
+import { Button, TextInput, View } from "react-native";
 import tailwind from "twrnc";
 class Form extends Component{
 
@@ -28,7 +28,7 @@ class Form extends Component{
     render(){
 
         return(
-            <View style={tailwind.style("  flex-row  flex m-5 rounded-xl justify-around content-between")}>
+            <View style={tailwind.style("  flex-row  flex m-5 rounded-xl justify-around content-between ")}>
                 <TextInput 
                 style={tailwind.style("bg-slate-100 w-70 p-2")}
                     value={this.state.text}
