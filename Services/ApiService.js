@@ -1,4 +1,4 @@
-const url = ''
+const url = ' http://localhost:3002/api/react-native'
 
 export const ApiService ={
 

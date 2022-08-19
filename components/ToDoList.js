@@ -16,8 +16,8 @@ class ToDoList extends Component{
     handleRow = ({item, index}) =>{// index com a posição 0
 
         return(
-            <View style={tailwind.style("w-full bg-black flex-row  flex  rounded-xl justify-around  mb-1 pt-2")}> 
-                <Text style={tailwind.style(" text-black-500 text-white flex")}>        {/* id,          descrição */}
+            <View style={tailwind.style("w-full bg-white flex-row  flex  rounded-xl justify-around  mb-1 pt-2")}> 
+                <Text style={tailwind.style("  text-black flex")}>        {/* id,          descrição */}
                     {this.formatListNumber(index)} - {item.text}
                 </Text>
                 <Button  title="delete"  onPress={() => this.props.onRemove(item)}/>
@@ -39,9 +39,9 @@ class ToDoList extends Component{
         return(
             <View style={tailwind.style(" bg-slate-300 w-full flex-row flex justify-center items-center pt-10 ")}>
                 <FlatList 
-                data={props.list}
-                keyExtractor={keyExtractor}
-                renderItem={this.handleRow}
+                    data={props.list}
+                    keyExtractor={keyExtractor}
+                    renderItem={this.handleRow}
                 />
             </View>
         )

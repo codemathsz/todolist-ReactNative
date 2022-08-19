@@ -14,7 +14,7 @@ class App extends Component{
   async componentDidMount(){
 
     const list = await ToDoService.list()/*  await, fica aguardando receber algo */
-    this.setState(list)/*  state para ir atualizando a lista */
+    this.setState({list})/*  state para ir atualizando a lista */
   }
 
   /*  metodo add da lista */
@@ -27,7 +27,7 @@ class App extends Component{
   remove = async (item) =>{
     await ToDoService.remove(item.id)
     const list = this.state.list.filter(itemList => itemList.id !== item.id)
-    this.setState(list)
+    this.setState({list})
   }
   render(){
     const {state} = this
