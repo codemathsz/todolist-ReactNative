@@ -17,7 +17,7 @@ class ToDoList extends Component{
     handleRow = ({item, index}) =>{// index com a posição 0
 
         return(
-            <View style={tailwind.style("w-70 h-auto bg-violet-500 flex-row  flex items-center  rounded-md justify-around text-left  mb-1 ")}> 
+            <View style={tailwind.style("w-80 h-auto bg-violet-500 flex-row  flex items-center  rounded-md justify-around text-left  mb-1 ")}> 
                 <Text style={tailwind.style(" w-4/5 text-white font-bold text-lg flex-wrap ")}>        {/* id,          descrição */}
                     {this.formatListNumber(index)} - {item.text}
                 </Text>

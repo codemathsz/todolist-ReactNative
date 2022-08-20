@@ -5,6 +5,7 @@ import {ToDoService} from './Services/ToDoService'
 import ToDoList from './components/ToDoList';
 import React,{Component} from 'react';
 import tailwind from 'twrnc';
+import Title from './components/Title';
 
 class App extends Component{
 
@@ -33,7 +34,8 @@ class App extends Component{
   render(){
     const {state} = this
     return (
-      <View style={tailwind.style("h-full")}> 
+      <View style={tailwind.style("h-full bg-slate-100")}> 
+        <Title/>
         <Form
           onAdd={this.add}/*  submeter formulario */
         />
