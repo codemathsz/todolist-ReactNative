@@ -28,15 +28,15 @@ class Form extends Component{
     render(){
 
         return(
-            <View style={tailwind.style("  flex-row  flex m-5 rounded-xl justify-around content-between ")}>
+            <View style={tailwind.style("  flex-row  flex m-5 rounded-xl justify-around content-between  ")}>
                 <TextInput 
-                style={tailwind.style("bg-slate-100 w-70 p-2")}
+                style={tailwind.style("bg-zinc-800 text-white outline-none w-70 p-2 rounded-l uppercase font-bold")}
                     value={this.state.text}
                     onChangeText={this.handlerChanger}
                 />
                 <Button
                     title="Adicionar"
-                    color="#0062ac"
+                    color="#8b5cf6"
                     onPress={this.add}
                 />
             </View>

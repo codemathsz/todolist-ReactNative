@@ -12,7 +12,7 @@ export const ApiService ={
         return fetch(`${url}${endpoint}`,{
             method: 'POST',
             body: JSON.stringify(data)/*  converter os dados em string */
-        })
+        }).then(Response => Response.json())
     },
     /*  metodo delete */
     delete(endpoint, id){

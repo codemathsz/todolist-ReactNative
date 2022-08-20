@@ -4,6 +4,7 @@ import Form from './components/Form';
 import {ToDoService} from './Services/ToDoService'
 import ToDoList from './components/ToDoList';
 import React,{Component} from 'react';
+import tailwind from 'twrnc';
 
 class App extends Component{
 
@@ -32,11 +33,11 @@ class App extends Component{
   render(){
     const {state} = this
     return (
-      <View>
-        <ToDoList list={state.list} onRemove={this.remove}/>  
+      <View style={tailwind.style("h-full")}> 
         <Form
           onAdd={this.add}/*  submeter formulario */
         />
+         <ToDoList list={state.list} onRemove={this.remove}/> 
       </View>
     );
   }

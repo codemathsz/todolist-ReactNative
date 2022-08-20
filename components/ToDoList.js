@@ -2,6 +2,7 @@ import react,{Component} from "react";
 import { FlatList, View, Text } from "react-native";
 import { Button } from "react-native";
 import tailwind from "twrnc";
+import { StyleSheet } from "react-native";
 class ToDoList extends Component{
 
     // lista estatica para teste
@@ -16,11 +17,15 @@ class ToDoList extends Component{
     handleRow = ({item, index}) =>{// index com a posição 0
 
         return(
-            <View style={tailwind.style("w-full bg-white flex-row  flex  rounded-xl justify-around  mb-1 pt-2")}> 
-                <Text style={tailwind.style("  text-black flex")}>        {/* id,          descrição */}
+            <View style={tailwind.style("w-70 h-auto bg-violet-500 flex-row  flex items-center  rounded-md justify-around text-left  mb-1 ")}> 
+                <Text style={tailwind.style(" w-4/5 text-white font-bold text-lg flex-wrap ")}>        {/* id,          descrição */}
                     {this.formatListNumber(index)} - {item.text}
                 </Text>
-                <Button  title="delete"  onPress={() => this.props.onRemove(item)}/>
+                <Button 
+                    color='#8b5cf6'
+                    title="delete"  
+                    onPress={() => this.props.onRemove(item)}
+                 />
             </View>
         )
     }
@@ -37,7 +42,7 @@ class ToDoList extends Component{
         const {props} = this
         const keyExtractor = item => item.id;// retorna o item e o id da lista
         return(
-            <View style={tailwind.style(" bg-slate-300 w-full flex-row flex justify-center items-center pt-10 ")}>
+            <View style={tailwind.style("bg-zinc-800 w-full h-full flex justify-center items-center pt-10 rounded-t-3xl ")}>
                 <FlatList 
                     data={props.list}
                     keyExtractor={keyExtractor}
